@@ -11,15 +11,27 @@ import UIKit
 class ItemTableViewController: UITableViewController {
 
     //sample data array
-    var items= [item]
+    var items = [item]()
     
     //load sample data function
     func loadSampleData(){
+        var item1pic = UIImage(named: "shirt")!
+        var item1 = item(name: "Beatles Tee", photo0: item1pic, desc: "vintage beatles tee from the 71 concert tour",
+            status:"Availible", condition: "Heavily Used", date_posted: NSDate())
+        
+        var item2pic = UIImage(named: "kitchenware")
+        var item2 = item(name: "Assorted kitchenware", photo0: item2pic, desc: "cheese grater, small collinder, meat tenderizer...",
+            status:"Claimed", condition: "Lightly Used", date_posted: NSDate())
+        
+        items += [item1,item2]
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadSampleData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,24 +50,37 @@ class ItemTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cellIdentifier = "ItemTableViewCell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ItemTableViewCell
+        
+        // gets appropriate item with data to display
+        let item = items[indexPath.row]
+        cell.name.text = item.name
+        cell.pic.image = item.photo0
+        cell.condition.text = item.condition
+        
+        //reformat date to be displayed in label as string 
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = .ShortStyle
+        cell.date.text = dateFormatter.stringFromDate(item.date_posted)
+        
 
-        // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

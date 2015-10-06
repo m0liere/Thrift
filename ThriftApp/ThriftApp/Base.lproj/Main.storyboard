@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hCt-8w-kvb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,18 +16,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Condition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tT-3z-9be">
+                                <rect key="frame" x="55" y="98" width="528" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="EtW-Io-QTs"/>
+                                    <constraint firstAttribute="height" constant="40" id="gnX-3L-WEP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EtW-Io-QTs"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzJ-kh-sG7">
+                                <rect key="frame" x="55" y="34" width="529" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="53D-8o-Tni"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="gpe-GK-2zZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gpe-GK-2zZ"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8tT-3z-9be" firstAttribute="top" secondItem="GzJ-kh-sG7" secondAttribute="bottom" constant="24" id="2gC-Yz-fFK"/>
+                            <constraint firstItem="GzJ-kh-sG7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="15" id="Bj7-I0-ZmL"/>
+                            <constraint firstItem="GzJ-kh-sG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="EN5-pl-jdt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8tT-3z-9be" secondAttribute="trailing" constant="15" id="GeL-mB-qWj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GzJ-kh-sG7" secondAttribute="bottom" constant="24" id="IN6-AW-Wpc"/>
+                            <constraint firstItem="GzJ-kh-sG7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="MJU-CN-41H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GzJ-kh-sG7" secondAttribute="trailing" constant="15" id="Rj8-Tb-WFe"/>
+                            <constraint firstItem="8tT-3z-9be" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="ZXW-oT-Nmo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bj7-I0-ZmL"/>
+                                <exclude reference="IN6-AW-Wpc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="qPr-g4-5Zq"/>
+                    <connections>
+                        <outlet property="conditionInput" destination="8tT-3z-9be" id="UaU-lt-aIR"/>
+                        <outlet property="nameInput" destination="GzJ-kh-sG7" id="5hH-4I-2a3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="291" y="-664"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Item Table View Controller-->
         <scene sceneID="4sx-CL-P4Q">
             <objects>
-                <tableViewController id="hCt-8w-kvb" sceneMemberID="viewController">
+                <tableViewController id="hCt-8w-kvb" customClass="ItemTableViewController" customModule="ThriftApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ysq-ge-zCK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +118,7 @@
                                     <outlet property="date" destination="kbt-o7-qaT" id="clz-4j-hDo"/>
                                     <outlet property="name" destination="Aoc-La-9xL" id="HR3-tk-wgQ"/>
                                     <outlet property="pic" destination="3Ze-7J-puF" id="liP-Sr-xFK"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="6uC-PE-Uxr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

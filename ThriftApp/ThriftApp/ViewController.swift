@@ -8,14 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
  
+    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var conditionInput: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //register cell class (from weheartswift tutorial
+        //deligate handling for text inputs
+        nameInput.delegate = self
+        conditionInput.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

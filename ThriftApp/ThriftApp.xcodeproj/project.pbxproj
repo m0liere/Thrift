@@ -14,6 +14,9 @@
 		C4D66CF31BC3225F00CCF584 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D66CF11BC3225F00CCF584 /* LaunchScreen.xib */; };
 		C4D66CFF1BC3225F00CCF584 /* ThriftAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66CFE1BC3225F00CCF584 /* ThriftAppTests.swift */; };
 		C4D66D091BC3474600CCF584 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66D081BC3474600CCF584 /* ItemTableViewCell.swift */; };
+		C4D66D0B1BC4001200CCF584 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66D0A1BC4001200CCF584 /* ItemTableViewController.swift */; };
+		C4D66D0D1BC400FF00CCF584 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66D0C1BC400FF00CCF584 /* item.swift */; };
+		C4D66D0E1BC400FF00CCF584 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66D0C1BC400FF00CCF584 /* item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 		C4D66CFD1BC3225F00CCF584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4D66CFE1BC3225F00CCF584 /* ThriftAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThriftAppTests.swift; sourceTree = "<group>"; };
 		C4D66D081BC3474600CCF584 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		C4D66D0A1BC4001200CCF584 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		C4D66D0C1BC400FF00CCF584 /* item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,8 @@
 				C4D66CF11BC3225F00CCF584 /* LaunchScreen.xib */,
 				C4D66CE61BC3225F00CCF584 /* Supporting Files */,
 				C4D66D081BC3474600CCF584 /* ItemTableViewCell.swift */,
+				C4D66D0A1BC4001200CCF584 /* ItemTableViewController.swift */,
+				C4D66D0C1BC400FF00CCF584 /* item.swift */,
 			);
 			path = ThriftApp;
 			sourceTree = "<group>";
@@ -217,6 +224,8 @@
 			files = (
 				C4D66CEB1BC3225F00CCF584 /* ViewController.swift in Sources */,
 				C4D66D091BC3474600CCF584 /* ItemTableViewCell.swift in Sources */,
+				C4D66D0D1BC400FF00CCF584 /* item.swift in Sources */,
+				C4D66D0B1BC4001200CCF584 /* ItemTableViewController.swift in Sources */,
 				C4D66CE91BC3225F00CCF584 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D66D0E1BC400FF00CCF584 /* item.swift in Sources */,
 				C4D66CFF1BC3225F00CCF584 /* ThriftAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

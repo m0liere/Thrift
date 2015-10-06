@@ -10,8 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
  
+    //outlets
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var conditionInput: UITextField!
+    @IBOutlet weak var descInput: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,4 +31,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 
 }
+
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hCt-8w-kvb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OBv-ZV-Rz6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ThriftApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,21 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Condition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tT-3z-9be">
-                                <rect key="frame" x="55" y="98" width="528" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="EtW-Io-QTs"/>
-                                    <constraint firstAttribute="height" constant="40" id="gnX-3L-WEP"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="EtW-Io-QTs"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzJ-kh-sG7">
                                 <rect key="frame" x="55" y="34" width="529" height="40"/>
                                 <constraints>
@@ -47,17 +33,54 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Condition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tT-3z-9be">
+                                <rect key="frame" x="55" y="98" width="528" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="EtW-Io-QTs"/>
+                                    <constraint firstAttribute="height" constant="40" id="gnX-3L-WEP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EtW-Io-QTs"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="iEJ-6j-dzJ">
+                                <rect key="frame" x="55" y="146" width="503" height="128"/>
+                                <color key="backgroundColor" red="0.90459280303030298" green="0.90459280303030298" blue="0.90459280303030298" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="qOW-IY-1ca"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="150" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-t4-QHe">
+                                <rect key="frame" x="55" y="282" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="00t-Rk-59e"/>
+                                    <constraint firstAttribute="width" secondItem="h1W-t4-QHe" secondAttribute="height" multiplier="1:1" id="pY8-rH-PG4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8tT-3z-9be" firstAttribute="top" secondItem="GzJ-kh-sG7" secondAttribute="bottom" constant="24" id="2gC-Yz-fFK"/>
+                            <constraint firstItem="iEJ-6j-dzJ" firstAttribute="top" secondItem="8tT-3z-9be" secondAttribute="bottom" constant="8" id="5ON-H9-Yeu"/>
                             <constraint firstItem="GzJ-kh-sG7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="15" id="Bj7-I0-ZmL"/>
+                            <constraint firstItem="h1W-t4-QHe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="DVy-bS-0hk"/>
                             <constraint firstItem="GzJ-kh-sG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="EN5-pl-jdt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8tT-3z-9be" secondAttribute="trailing" constant="15" id="GeL-mB-qWj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GzJ-kh-sG7" secondAttribute="bottom" constant="24" id="IN6-AW-Wpc"/>
                             <constraint firstItem="GzJ-kh-sG7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="MJU-CN-41H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GzJ-kh-sG7" secondAttribute="trailing" constant="15" id="Rj8-Tb-WFe"/>
                             <constraint firstItem="8tT-3z-9be" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="ZXW-oT-Nmo"/>
+                            <constraint firstItem="h1W-t4-QHe" firstAttribute="top" secondItem="8tT-3z-9be" secondAttribute="bottom" constant="144" id="c68-aN-Ped"/>
+                            <constraint firstItem="iEJ-6j-dzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="fYY-6x-Hjm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iEJ-6j-dzJ" secondAttribute="trailing" constant="15" id="obu-sQ-O9E"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -66,17 +89,21 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="qPr-g4-5Zq"/>
+                    <navigationItem key="navigationItem" title="New Item" id="qPr-g4-5Zq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uZ8-Xm-MLg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="y4M-qI-KZq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="conditionInput" destination="8tT-3z-9be" id="UaU-lt-aIR"/>
+                        <outlet property="descInput" destination="iEJ-6j-dzJ" id="EsG-B8-zKi"/>
                         <outlet property="nameInput" destination="GzJ-kh-sG7" id="5hH-4I-2a3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="-664"/>
+            <point key="canvasLocation" x="1915" y="-650"/>
         </scene>
-        <!--Item Table View Controller-->
+        <!--Items-->
         <scene sceneID="4sx-CL-P4Q">
             <objects>
                 <tableViewController id="hCt-8w-kvb" customClass="ItemTableViewController" customModule="ThriftApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,7 +145,6 @@
                                     <outlet property="date" destination="kbt-o7-qaT" id="clz-4j-hDo"/>
                                     <outlet property="name" destination="Aoc-La-9xL" id="HR3-tk-wgQ"/>
                                     <outlet property="pic" destination="3Ze-7J-puF" id="liP-Sr-xFK"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="6uC-PE-Uxr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -127,10 +153,56 @@
                             <outlet property="delegate" destination="hCt-8w-kvb" id="0NE-vy-sSG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Items" id="GDL-94-617">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Vs-Qj-ewW">
+                            <connections>
+                                <segue destination="Raz-ZU-82Q" kind="presentation" identifier="AddItem" id="iRQ-4x-Czp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0L-2O-gFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="449" y="-664"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="62j-G8-OCp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OBv-ZV-Rz6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9gd-sW-g2E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hCt-8w-kvb" kind="relationship" relationship="rootViewController" id="Vbo-WA-E8i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7p-Fu-Lbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-363" y="-664"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u3F-bF-fYH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Raz-ZU-82Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4fW-a1-aTl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wDt-GP-1hD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BwI-Yg-Oq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="-650"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="1080" height="1080"/>
+    </resources>
 </document>

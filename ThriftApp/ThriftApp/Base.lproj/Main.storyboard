@@ -60,10 +60,14 @@
                             </textView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="150" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-t4-QHe">
                                 <rect key="frame" x="55" y="282" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="00t-Rk-59e"/>
                                     <constraint firstAttribute="width" secondItem="h1W-t4-QHe" secondAttribute="height" multiplier="1:1" id="pY8-rH-PG4"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HEx-qr-NSw" appends="YES" id="qBp-80-ox4"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -111,6 +115,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="Gjm-lY-cdu" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="HEx-qr-NSw">
+                    <connections>
+                        <action selector="selectImage:" destination="BYZ-38-t0r" id="hrS-A0-uP8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1915" y="-650"/>
         </scene>

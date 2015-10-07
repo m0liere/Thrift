@@ -9,19 +9,16 @@
 import UIKit
 
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
  
-    //outlets
+    //MARK: - Outlets
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var conditionInput: UITextField!
     @IBOutlet weak var descInput: UITextView!
     @IBOutlet weak var photo0Input: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    /*
-    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
-    or constructed as part of adding a new meal.
-    */
+    //Item object to store inputted information
     var newItem: item?
 
     
@@ -45,6 +42,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    // MARK: UIImagePickerControllerDelegate
+    //Cancel photo selection
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
+    //Select photo
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //put photo into the imageview
+        photo0Input.image = selectedImage
+        
+        // Dismiss the picker.
+        dismissViewControllerAnimated(true, completion: nil)
+ 
+    }
+
+
+    // MARK: - Actions
+    @IBAction func selectImage(sender: UITapGestureRecognizer) {
+        // Hide the keyboard if user taps while still in another textbox
+        nameInput.resignFirstResponder()
+        conditionInput.resignFirstResponder()
+        descInput.resignFirstResponder()
+        
+        // UIImagePickerController - "lets a user pick media from their photo library"
+        let imagePickerController = UIImagePickerController()
+        
+        //set source for image picker, can change to allow camera for demo on device
+        imagePickerController.sourceType = .PhotoLibrary
+        
+        //Delegate 
+        imagePickerController.delegate = self
+        
+        presentViewController(imagePickerController, animated: true, completion: nil)
+
+        
+    }
+    
+    // MARK: - Std ViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

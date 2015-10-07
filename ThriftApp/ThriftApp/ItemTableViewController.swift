@@ -10,6 +10,8 @@ import UIKit
 
 class ItemTableViewController: UITableViewController {
 
+    
+    // MARK: - Sample data population
     //sample data array
     var items = [item]()
     
@@ -27,7 +29,7 @@ class ItemTableViewController: UITableViewController {
         
         
     }
-    
+    // MARK: Standard ViewController Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,5 +128,10 @@ class ItemTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? ViewController, newItem = sourceViewController.newItem {
+        }    }
 
 }

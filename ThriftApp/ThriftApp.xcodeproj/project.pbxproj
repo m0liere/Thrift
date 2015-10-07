@@ -167,7 +167,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
-				ORGANIZATIONNAME = "Roei C-H";
+				ORGANIZATIONNAME = "CMU IS";
 				TargetAttributes = {
 					C4D66CE21BC3225F00CCF584 = {
 						CreatedOnToolsVersion = 6.4;
@@ -425,6 +425,7 @@
 				C4D66D041BC3225F00CCF584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4D66D051BC3225F00CCF584 /* Build configuration list for PBXNativeTarget "ThriftAppTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				C4D66D071BC3225F00CCF584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -130,8 +130,13 @@ class ItemTableViewController: UITableViewController {
     */
     
     // MARK: - Actions
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToItemList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? ViewController, newItem = sourceViewController.newItem {
-        }    }
+            // Add a new item
+            let newIndexPath = NSIndexPath(forRow: items.count, inSection: 0)
+            items.append(newItem)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
 
 }

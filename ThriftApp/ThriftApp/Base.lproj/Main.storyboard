@@ -91,18 +91,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Item" id="qPr-g4-5Zq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uZ8-Xm-MLg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="y4M-qI-KZq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="y4M-qI-KZq">
+                            <connections>
+                                <segue destination="Gjm-lY-cdu" kind="unwind" unwindAction="unwindToItemList:" id="uob-x5-RNX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="conditionInput" destination="8tT-3z-9be" id="UaU-lt-aIR"/>
                         <outlet property="descInput" destination="iEJ-6j-dzJ" id="EsG-B8-zKi"/>
-                        <outlet property="itemPic1" destination="h1W-t4-QHe" id="JXd-NC-jTG"/>
                         <outlet property="nameInput" destination="GzJ-kh-sG7" id="5hH-4I-2a3"/>
                         <outlet property="photo0Input" destination="h1W-t4-QHe" id="lHg-iA-tYI"/>
                         <outlet property="saveButton" destination="y4M-qI-KZq" id="LtD-yh-Niw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Gjm-lY-cdu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1915" y="-650"/>
         </scene>

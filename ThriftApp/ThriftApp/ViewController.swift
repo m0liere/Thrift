@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //MARK: - Outlets
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var conditionInput: UITextField!
-    @IBOutlet weak var descInput: UITextView!
+    @IBOutlet weak var descInput: UITextField!
     @IBOutlet weak var photo0Input: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     

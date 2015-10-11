@@ -18,6 +18,7 @@ class item{
     var status: String
     var condition: String
     var date_posted: NSDate
+    //var user_id: Int!
     
     //Constructor method
     init(name: String, photo0: UIImage?, desc: String, status: String, condition: String, date_posted: NSDate){

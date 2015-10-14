@@ -23,7 +23,11 @@ class item{
     //Constructor method
     init(name: String, photo0: UIImage?, desc: String, status: String, condition: String, date_posted: NSDate){
         self.name = name
-        self.photo0 = photo0
+        //unpack optional image (although there is a default image 
+        if let x = photo0{
+            self.photo0 = x
+
+        }
         self.desc = desc
         self.status = status
         self.condition = condition

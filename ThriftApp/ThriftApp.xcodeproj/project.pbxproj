@@ -22,6 +22,7 @@
 		C4D66D0E1BC400FF00CCF584 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66D0C1BC400FF00CCF584 /* item.swift */; };
 		C4DB57661BCEA8E8006B804D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB57651BCEA8E8006B804D /* LoginViewController.swift */; };
 		C4DB57681BCEA90B006B804D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB57671BCEA90B006B804D /* RegisterViewController.swift */; };
+		C4DDECCB1BD6860D00F0437B /* jsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DDECCA1BD6860D00F0437B /* jsonParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C4D66D0C1BC400FF00CCF584 /* item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		C4DB57651BCEA8E8006B804D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C4DB57671BCEA90B006B804D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C4DDECCA1BD6860D00F0437B /* jsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				C4950F4E1BCC0480000DA320 /* ProfileViewController.swift */,
 				C4DB57651BCEA8E8006B804D /* LoginViewController.swift */,
 				C4DB57671BCEA90B006B804D /* RegisterViewController.swift */,
+				C4DDECCA1BD6860D00F0437B /* jsonParser.swift */,
 			);
 			path = ThriftApp;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				C4DB57661BCEA8E8006B804D /* LoginViewController.swift in Sources */,
 				C4DB57681BCEA90B006B804D /* RegisterViewController.swift in Sources */,
 				C4D66CEB1BC3225F00CCF584 /* ViewController.swift in Sources */,
+				C4DDECCB1BD6860D00F0437B /* jsonParser.swift in Sources */,
 				C4950F4D1BCB2DC2000DA320 /* ItemDetailViewController.swift in Sources */,
 				C4D66D091BC3474600CCF584 /* ItemTableViewCell.swift in Sources */,
 				C4950F4B1BCB0251000DA320 /* User.swift in Sources */,

@@ -462,6 +462,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="login:" destination="nWi-to-tYj" eventType="touchUpInside" id="6dH-u0-7pY"/>
                                     <segue destination="EiB-Uf-jJR" kind="presentation" id="rk2-Do-P9u"/>
                                 </connections>
                             </button>
@@ -475,7 +476,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hRN-Ei-weA" firstAttribute="centerX" secondItem="fA7-iR-Yzt" secondAttribute="centerX" id="Xde-sC-2Pw"/>
                             <constraint firstItem="jIT-dz-e1N" firstAttribute="centerX" secondItem="PGa-TA-xit" secondAttribute="centerX" constant="-0.5" id="hiZ-K4-e3l"/>
@@ -485,6 +486,10 @@
                             <constraint firstAttribute="centerX" secondItem="fA7-iR-Yzt" secondAttribute="centerX" constant="-0.5" id="uVs-Zh-8B0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordInput" destination="PGa-TA-xit" id="K6D-Yq-xsf"/>
+                        <outlet property="usernameInput" destination="hRN-Ei-weA" id="X8r-1n-4bc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ae-oe-4n7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -631,6 +636,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Account" id="hSA-d3-H02">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="uw6-4C-20k"/>
+                        <barButtonItem key="rightBarButtonItem" title="Register" id="RKx-g7-LSC">
+                            <connections>
+                                <action selector="register:" destination="M7u-cv-9FJ" id="0a8-kf-Zpr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="emailInput" destination="AYu-cW-Gny" id="Mxl-6e-eyR"/>

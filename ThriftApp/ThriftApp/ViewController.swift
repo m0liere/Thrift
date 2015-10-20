@@ -42,6 +42,30 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }
     }
     
+    func saveItem(){
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/create_item/")!)
+        request.HTTPMethod = "POST"
+        request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
+        let postString = "user_id=INSERTSOMETHING&name=\(nameInput)&description=\(descInput)"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        
+
+    }
+    
     
     // MARK: UIImagePickerControllerDelegate
     //Cancel photo selection

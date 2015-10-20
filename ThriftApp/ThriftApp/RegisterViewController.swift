@@ -18,11 +18,22 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     
     
+    // MARK: - Actions
+    @IBAction func register(sender: AnyObject) {
+        createUser()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    //function to save user to django app
     func createUser(){
         let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/create_user/")!)
         request.HTTPMethod = "POST"
         request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
-        let postString = "first_name=larry&last_name=h&phone=77777&email=fdksjhf@fdsajkh.com&password=fds"
+        
+        let postString = "first_name=\(fnameInput)&last_name=\(lnameInput)&phone=\(phoneInput)&email=\(emailInput)&password=\(passwordInput)"
+        
+        
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
@@ -32,7 +43,7 @@ class RegisterViewController: UIViewController {
                 return
             }
             
-            print("response = \(response)")
+            //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("responseString = \(responseString)")

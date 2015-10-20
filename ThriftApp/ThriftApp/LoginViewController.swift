@@ -10,6 +10,42 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    //MARK: - Outlets
+    @IBOutlet weak var usernameInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
+    
+    //MARK: - Actions
+    @IBAction func login(sender: AnyObject) {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/login/")!)
+        request.HTTPMethod = "POST"
+        request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
+        
+        let postString = "email=\(usernameInput.text)&password=\(passwordInput.text)"
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            //print("response = \(response)")
+            
+            let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+            print(parsed["user_id"])
+            
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

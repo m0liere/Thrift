@@ -30,7 +30,7 @@ class ItemTableViewController: UITableViewController {
                 return
             }
             
-            print("response = \(response)")
+            //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("responseString = \(responseString)")

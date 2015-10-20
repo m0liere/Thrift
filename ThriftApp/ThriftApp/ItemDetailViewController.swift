@@ -19,6 +19,27 @@ class ItemDetailViewController: UIViewController {
         
     */
     @IBAction func requestItem(sender: UIButton) {
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/request_item/")!)
+        request.HTTPMethod = "POST"
+        request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
+        let postString = ""
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        
+
     }
     
     override func viewDidLoad() {

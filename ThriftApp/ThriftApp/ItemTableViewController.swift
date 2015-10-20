@@ -33,7 +33,7 @@ class ItemTableViewController: UITableViewController {
             //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+            //print("responseString = \(responseString)")
         }
         task.resume()
 
@@ -60,6 +60,7 @@ class ItemTableViewController: UITableViewController {
         
         loadSampleData()
         getItems()
+        print("THE USER ID IS: \(user_info.user_id)")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

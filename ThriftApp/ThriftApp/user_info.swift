@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct user_info {
+public struct user_info {
     static var user_id: String!
 }

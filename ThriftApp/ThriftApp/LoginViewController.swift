@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import user_info
 
 
 class LoginViewController: UIViewController {
@@ -40,9 +39,13 @@ class LoginViewController: UIViewController {
             //print("response = \(response)")
             
             let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-            let id_int = parsed["user_id"]! as! NSNumber
-            let aString = "\(id_int)"
-            user_info.user_id = aString
+            if let x: AnyObject = parsed["user_id"]{
+                var id_int = x as! NSNumber
+                let aString = "\(id_int)"
+                print(aString)
+                user_info.user_id = aString
+            }
+
             
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)

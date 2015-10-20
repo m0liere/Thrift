@@ -359,13 +359,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thrift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA7-iR-Yzt">
-                                <rect key="frame" x="252" y="65" width="97" height="50"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIU-8C-38u">
                                 <rect key="frame" x="200" y="366" width="200" height="34"/>
                                 <animations/>
@@ -389,15 +382,25 @@
                                     <segue destination="J0S-9f-nD5" kind="presentation" id="F9X-RJ-vZc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="fxl-0Q-Z7h">
+                                <rect key="frame" x="98" y="28" width="404" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="404" id="Dau-hb-XyZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fxl-0Q-Z7h" secondAttribute="centerX" id="2ip-uN-d5O"/>
                             <constraint firstItem="hRN-Ei-weA" firstAttribute="top" secondItem="KIy-Dv-Qle" secondAttribute="bottom" constant="176" id="4zy-ox-AJh"/>
+                            <constraint firstItem="hRN-Ei-weA" firstAttribute="top" secondItem="fxl-0Q-Z7h" secondAttribute="bottom" constant="40" id="Cy6-Xl-3lw"/>
                             <constraint firstItem="jIT-dz-e1N" firstAttribute="top" secondItem="NIU-8C-38u" secondAttribute="bottom" constant="8" id="SNL-N6-cgE"/>
                             <constraint firstItem="hRN-Ei-weA" firstAttribute="trailing" secondItem="vUe-e7-is3" secondAttribute="trailingMargin" id="XpF-SB-sZj"/>
                             <constraint firstItem="PGa-TA-xit" firstAttribute="top" secondItem="hRN-Ei-weA" secondAttribute="bottom" constant="23" id="e70-MC-JKV"/>
                             <constraint firstItem="hRN-Ei-weA" firstAttribute="leading" secondItem="vUe-e7-is3" secondAttribute="leadingMargin" id="ePc-Ic-hRQ"/>
+                            <constraint firstItem="fxl-0Q-Z7h" firstAttribute="top" secondItem="KIy-Dv-Qle" secondAttribute="bottom" constant="8" id="ecr-85-q3I"/>
                             <constraint firstAttribute="centerX" secondItem="jIT-dz-e1N" secondAttribute="centerX" id="erT-DV-41e"/>
                             <constraint firstItem="PGa-TA-xit" firstAttribute="trailing" secondItem="vUe-e7-is3" secondAttribute="trailingMargin" id="hkh-pt-eoT"/>
                             <constraint firstItem="PGa-TA-xit" firstAttribute="leading" secondItem="vUe-e7-is3" secondAttribute="leadingMargin" id="k3I-UW-OCM"/>
@@ -604,6 +607,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="514" height="195"/>
         <image name="defaultPhoto" width="1080" height="1080"/>
     </resources>
 </document>

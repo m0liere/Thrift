@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             //set item to pass between controllers (unwind segue)
             //starting status: 'availible'
-            newItem = item(name: name, photo0: photo, desc: desc, status: "Available", condition: condition, date_posted: NSDate() )
+            newItem = item(name: name, photo0: photo, desc: desc, status: "Available", condition: condition)
             
         }
     }

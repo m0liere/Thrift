@@ -22,7 +22,8 @@
 		C4D66D0E1BC400FF00CCF584 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D66D0C1BC400FF00CCF584 /* item.swift */; };
 		C4DB57661BCEA8E8006B804D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB57651BCEA8E8006B804D /* LoginViewController.swift */; };
 		C4DB57681BCEA90B006B804D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB57671BCEA90B006B804D /* RegisterViewController.swift */; };
-		C4DDECCB1BD6860D00F0437B /* jsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DDECCA1BD6860D00F0437B /* jsonParser.swift */; };
+		C4DDECCB1BD6860D00F0437B /* user_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DDECCA1BD6860D00F0437B /* user_info.swift */; };
+		C4DDECCD1BD69BEA00F0437B /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DDECCC1BD69BEA00F0437B /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,9 @@
 		C4D66D0C1BC400FF00CCF584 /* item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		C4DB57651BCEA8E8006B804D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C4DB57671BCEA90B006B804D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		C4DDECCA1BD6860D00F0437B /* jsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonParser.swift; sourceTree = "<group>"; };
+		C4DDECCA1BD6860D00F0437B /* user_info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user_info.swift; sourceTree = "<group>"; };
+		C4DDECCC1BD69BEA00F0437B /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		C4DDECD01BD69D0500F0437B /* ThriftApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ThriftApp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 		C4D66CDA1BC3225F00CCF584 = {
 			isa = PBXGroup;
 			children = (
+				C4DDECD01BD69D0500F0437B /* ThriftApp */,
 				C4D66CE51BC3225F00CCF584 /* ThriftApp */,
 				C4D66CFB1BC3225F00CCF584 /* ThriftAppTests */,
 				C4D66CE41BC3225F00CCF584 /* Products */,
@@ -110,7 +114,8 @@
 				C4950F4E1BCC0480000DA320 /* ProfileViewController.swift */,
 				C4DB57651BCEA8E8006B804D /* LoginViewController.swift */,
 				C4DB57671BCEA90B006B804D /* RegisterViewController.swift */,
-				C4DDECCA1BD6860D00F0437B /* jsonParser.swift */,
+				C4DDECCA1BD6860D00F0437B /* user_info.swift */,
+				C4DDECCC1BD69BEA00F0437B /* test.swift */,
 			);
 			path = ThriftApp;
 			sourceTree = "<group>";
@@ -241,9 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4DB57661BCEA8E8006B804D /* LoginViewController.swift in Sources */,
+				C4DDECCD1BD69BEA00F0437B /* test.swift in Sources */,
 				C4DB57681BCEA90B006B804D /* RegisterViewController.swift in Sources */,
 				C4D66CEB1BC3225F00CCF584 /* ViewController.swift in Sources */,
-				C4DDECCB1BD6860D00F0437B /* jsonParser.swift in Sources */,
+				C4DDECCB1BD6860D00F0437B /* user_info.swift in Sources */,
 				C4950F4D1BCB2DC2000DA320 /* ItemDetailViewController.swift in Sources */,
 				C4D66D091BC3474600CCF584 /* ItemTableViewCell.swift in Sources */,
 				C4950F4B1BCB0251000DA320 /* User.swift in Sources */,

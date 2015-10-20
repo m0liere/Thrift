@@ -8,11 +8,15 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    
+    var user_id: String!
+    
     
     //MARK: - Actions
     @IBAction func login(sender: AnyObject) {
@@ -35,11 +39,17 @@ class LoginViewController: UIViewController {
             //print("response = \(response)")
             
             let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-            print(parsed["user_id"])
+            if let x: AnyObject = parsed["user_id"]{
+                var id_int = x as! NSNumber
+                let aString = "\(id_int)"
+                print(aString)
+                user_info.user_id = aString
+            }
+
             
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+            //print("responseString = \(responseString)")
         }
         task.resume()
         

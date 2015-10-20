@@ -30,10 +30,32 @@ class ItemTableViewController: UITableViewController {
                 return
             }
             
+            
+            //getItems post request gives 10 items
+            
+            
+            //Parse json
+            let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSMutableArray
+            print(parsed[1])
+            
+            for i in 0..<parsed.count{
+                //unwrap all optionals in parsed data and update labels
+                if let x = parsed[i]["description"] as? NSString,  y = parsed[i]["name"] as? NSString, z = parsed[i]["status"] as? NSString{
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        var newPic = UIImage(named: "defaultPhoto")!
+                        var newItem = item(name: y as String, photo0: newPic, desc: x as String, status: z as String, condition: "")
+                        self.items += [newItem]
+                        self.tableView.reloadData()
+
+                    })
+                }
+            }
+            
+            
             //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+            //print("responseString = \(responseString)")
         }
         task.resume()
 
@@ -44,11 +66,11 @@ class ItemTableViewController: UITableViewController {
     func loadSampleData(){
         var item1pic = UIImage(named: "shirt")!
         var item1 = item(name: "Beatles Tee", photo0: item1pic, desc: "vintage beatles tee from the 71 concert tour",
-            status:"Availible", condition: "Heavily Used", date_posted: NSDate())
+            status:"Availible", condition: "Heavily Used")
         
         var item2pic = UIImage(named: "kitchenware")
         var item2 = item(name: "Assorted kitchenware", photo0: item2pic, desc: "cheese grater, small collinder, meat tenderizer...",
-            status:"Claimed", condition: "Lightly Used", date_posted: NSDate())
+            status:"Claimed", condition: "Lightly Used")
         
         items += [item1,item2]
         
@@ -60,6 +82,7 @@ class ItemTableViewController: UITableViewController {
         
         loadSampleData()
         getItems()
+        print("THE USER ID IS: \(user_info.user_id)")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -97,12 +120,11 @@ class ItemTableViewController: UITableViewController {
         let item = items[indexPath.row]
         cell.name.text = item.name
         cell.pic.image = item.photo0
-        cell.condition.text = item.condition
+        //these two variables need to be renamed, but will remain this way for testing
+        cell.condition.text = item.status
+        cell.date.text = item.desc
         
-        //reformat date to be displayed in label as string 
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.timeStyle = .ShortStyle
-        cell.date.text = dateFormatter.stringFromDate(item.date_posted)
+
         
 
 

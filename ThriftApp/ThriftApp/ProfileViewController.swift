@@ -12,18 +12,30 @@ class ProfileViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var numStars: UILabel!
     @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
+    //current user variabled
+    var fname: String!
+    var lname: String!
+    var email: String!
+    var phone: String!
+    
+    
+    func updateLabels(){
+        firstnameLabel.text = fname
+        lastnameLabel.text = lname
+        emailLabel.text = email
+        phoneLabel.text = phone
+    }
     
     func getUserInfo(){
         let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/get_user/")!)
         request.HTTPMethod = "POST"
         request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
-        let postString = "1"
+        let postString = "user_id=1"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
@@ -33,18 +45,34 @@ class ProfileViewController: UIViewController {
                 return
             }
             
-            print("response = \(response)")
+            //Parse json
+            let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
             
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+            //unwrap all optionals in parsed data and update labels
+            if let x = parsed["first_name"] as? NSString,  y = parsed["last_name"] as? NSString, z = parsed["phone"] as? NSString, a = parsed["email"] as? NSString{
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.firstnameLabel.text = x as String
+                    self.lastnameLabel.text = y as String
+                    self.phoneLabel.text = z as String
+                    self.emailLabel.text = a as String
+                })
+            }
+            
+            //MARK: - Response lines
+            
+            //print("response = \(response)")
+            //let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //print("responseString = \(responseString)")
         }
         task.resume()
-        
+        print(self.fname)
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserInfo()
+        updateLabels()
 
         // Do any additional setup after loading the view.
     }

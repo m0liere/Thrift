@@ -17,11 +17,10 @@ class item{
     var desc: String
     var status: String
     var condition: String
-    var date_posted: NSDate
     //var user_id: Int!
     
     //Constructor method
-    init(name: String, photo0: UIImage?, desc: String, status: String, condition: String, date_posted: NSDate){
+    init(name: String, photo0: UIImage?, desc: String, status: String, condition: String){
         self.name = name
         //unpack optional image (although there is a default image 
         if let x = photo0{
@@ -31,7 +30,6 @@ class item{
         self.desc = desc
         self.status = status
         self.condition = condition
-        self.date_posted = date_posted
 
     }
     

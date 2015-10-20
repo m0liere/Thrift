@@ -30,6 +30,24 @@ class ItemTableViewController: UITableViewController {
                 return
             }
             
+            
+            //getItems post request gives 10 items
+            
+            
+            //Parse json
+            let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSMutableArray
+            print(parsed[5])
+            
+//            for i in 0...5{
+//                //unwrap all optionals in parsed data and update labels
+//                if let x = parsed[i]["description"] as? NSString,  y = parsed["name"] as? NSString, z = parsed["phone"] as? NSString, a = parsed["email"] as? NSString{
+//                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                        
+//                    })
+//                }
+//            }
+            
+            
             //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)

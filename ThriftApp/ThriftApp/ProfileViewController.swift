@@ -45,23 +45,23 @@ class ProfileViewController: UIViewController {
                 return
             }
             
+            //Parse json
             let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
             
-            
-            if let x = parsed["first_name"] as? NSString{
-                var fname = x as! String
-                //print(fname)
-                self.fname = fname
-                
+            //unwrap all optionals in parsed data and update labels
+            if let x = parsed["first_name"] as? NSString,  y = parsed["last_name"] as? NSString, z = parsed["phone"] as? NSString, a = parsed["email"] as? NSString{
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.firstnameLabel.text = x as String
+                    self.lastnameLabel.text = y as String
+                    self.phoneLabel.text = z as String
+                    self.emailLabel.text = a as String
                 })
-//                self.firstnameLabel.text = x as String
             }
             
-            //print("response = \(response)")
+            //MARK: - Response lines
             
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //print("response = \(response)")
+            //let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             //print("responseString = \(responseString)")
         }
         task.resume()

@@ -42,7 +42,11 @@ class ItemTableViewController: UITableViewController {
                 //unwrap all optionals in parsed data and update labels
                 if let x = parsed[i]["description"] as? NSString,  y = parsed[i]["name"] as? NSString, z = parsed[i]["status"] as? NSString{
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        
+                        var newPic = UIImage(named: "defaultPhoto")!
+                        var newItem = item(name: y as String, photo0: newPic, desc: x as String, status: z as String, condition: "")
+                        self.items += [newItem]
+                        self.tableView.reloadData()
+
                     })
                 }
             }
@@ -116,12 +120,11 @@ class ItemTableViewController: UITableViewController {
         let item = items[indexPath.row]
         cell.name.text = item.name
         cell.pic.image = item.photo0
-        cell.condition.text = item.condition
+        //these two variables need to be renamed, but will remain this way for testing
+        cell.condition.text = item.status
+        cell.date.text = item.desc
         
-        //reformat date to be displayed in label as string 
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.timeStyle = .ShortStyle
-        cell.date.text = dateFormatter.stringFromDate(item.date_posted)
+
         
 
 

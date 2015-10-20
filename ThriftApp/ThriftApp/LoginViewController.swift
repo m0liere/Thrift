@@ -39,11 +39,16 @@ class LoginViewController: UIViewController {
             //print("response = \(response)")
             
             let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+
+            
             if let x: AnyObject = parsed["user_id"]{
                 var id_int = x as! NSNumber
                 let aString = "\(id_int)"
                 print(aString)
-                user_info.user_id = aString
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    user_info.user_id = aString
+                })
             }
 
             

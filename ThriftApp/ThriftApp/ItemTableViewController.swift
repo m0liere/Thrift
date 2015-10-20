@@ -121,8 +121,8 @@ class ItemTableViewController: UITableViewController {
         cell.name.text = item.name
         cell.pic.image = item.photo0
         //these two variables need to be renamed, but will remain this way for testing
-        cell.condition.text = item.status
-        cell.date.text = item.desc
+        cell.condition.text = item.desc
+        cell.date.text = item.status
         
 
         

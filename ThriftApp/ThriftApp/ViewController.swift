@@ -13,7 +13,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
  
     //MARK: - Outlets
     @IBOutlet weak var nameInput: UITextField!
+    //description input
     @IBOutlet weak var conditionInput: UITextField!
+    //keywords input
     @IBOutlet weak var descInput: UITextField!
     @IBOutlet weak var photo0Input: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -30,14 +32,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //configure a view controller before it's presented
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
-            let name = nameInput.text ?? ""
-            let condition = conditionInput.text ?? ""
-            let desc = descInput.text ?? ""
-            let photo = photo0Input.image
-            
-            //set item to pass between controllers (unwind segue)
-            //starting status: 'availible'
-            newItem = item(name: name, photo0: photo, desc: desc, status: "Available", condition: condition)
+            saveItem()
+//            let name = nameInput.text ?? ""
+//            let condition = conditionInput.text ?? ""
+//            let desc = descInput.text ?? ""
+//            let photo = photo0Input.image
+//            
+//            //set item to pass between controllers (unwind segue)
+//            //starting status: 'availible'
+//            newItem = item(name: name, photo0: photo, desc: desc, status: "Available", condition: condition)
             
         }
     }
@@ -46,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/create_item/")!)
         request.HTTPMethod = "POST"
         request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
-        let postString = "user_id=INSERTSOMETHING&name=\(nameInput)&description=\(descInput)"
+        let postString = "user_id=1&name=\(nameInput.text)&description=\(descInput.text)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in

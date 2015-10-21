@@ -38,11 +38,17 @@ class ItemTableViewController: UITableViewController {
             let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSMutableArray
             print(parsed[1])
             
-            for i in 0..<parsed.count{
+            for i in self.items.count..<parsed.count{
                 //unwrap all optionals in parsed data and update labels
-                if let x = parsed[i]["description"] as? NSString,  y = parsed[i]["name"] as? NSString, z = parsed[i]["status"] as? NSString{
+                if let x = parsed[i]["description"] as? NSString,  y = parsed[i]["name"] as? NSString, z = parsed[i]["status"] as? NSString, a = parsed[i]["image"] as? String{
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        var newPic = UIImage(named: "defaultPhoto")!
+                        var newPic: UIImage!
+                        if a == "" {
+                            newPic = UIImage(named: "defaultPhoto")!
+                        }else{
+                            newPic = UIImage(named: a)!
+
+                        }
                         var newItem = item(name: y as String, photo0: newPic, desc: x as String, status: z as String, condition: "")
                         self.items += [newItem]
                         self.tableView.reloadData()
@@ -76,12 +82,16 @@ class ItemTableViewController: UITableViewController {
         
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        getItems()
+    }
+    
     // MARK: Standard ViewController Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadSampleData()
-        getItems()
+        //loadSampleData()
         print("THE USER ID IS: \(user_info.user_id)")
 
         // Uncomment the following line to preserve selection between presentations

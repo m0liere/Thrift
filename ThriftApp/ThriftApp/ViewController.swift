@@ -43,6 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 //            newItem = item(name: name, photo0: photo, desc: desc, status: "Available", condition: condition)
             
         }
+        
     }
     
     func saveItem(){

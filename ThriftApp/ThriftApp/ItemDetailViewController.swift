@@ -12,10 +12,35 @@ class ItemDetailViewController: UIViewController {
     
     
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var desc: UITextView!
-
+    @IBOutlet weak var name: UILabel!
+ 
+    @IBOutlet weak var desc: UITextField!
+    @IBOutlet weak var keywords: UITextField!
     
-    /*this action should call function in the model 
+    var detailItem: item? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
+    
+    func configureView() {
+        // Update the user interface for the detail item.
+        // Update the user interface for the detail item.
+        if let detail: item = self.detailItem {
+            if let name = self.name {
+                name.text = detail.name
+            }
+            if let desc = self.desc {
+                desc.text = detail.desc
+            }
+            if let photo = self.photo {
+                photo.image = detail.photo0
+            }
+        }
+    }
+    
+    /*this action should call function in the model
         
     */
     @IBAction func requestItem(sender: UIButton) {
@@ -44,6 +69,7 @@ class ItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureView()
 
         // Do any additional setup after loading the view.
     }

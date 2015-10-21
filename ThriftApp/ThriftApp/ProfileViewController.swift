@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
         let request = NSMutableURLRequest(URL: NSURL(string: "https://thrift-cmu.herokuapp.com/get_user/")!)
         request.HTTPMethod = "POST"
         request.setValue("https://thrift-cmu.herokuapp.com/", forHTTPHeaderField : "Referer")
-        let postString = "user_id=1"
+        let postString = "user_id=2"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in

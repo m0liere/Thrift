@@ -24,6 +24,10 @@ class RegisterViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
     
     //function to save user to django app
     func createUser(){

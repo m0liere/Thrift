@@ -269,6 +269,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Items" id="GDL-94-617">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Udw-d2-3Eb">
+                            <connections>
+                                <action selector="logout:" destination="hCt-8w-kvb" id="nag-rS-RY3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Vs-Qj-ewW">
                             <connections>
                                 <segue destination="Raz-ZU-82Q" kind="presentation" identifier="AddItem" id="iRQ-4x-Czp"/>

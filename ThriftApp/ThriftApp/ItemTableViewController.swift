@@ -194,6 +194,10 @@ class ItemTableViewController: UITableViewController {
             }
         }
     }
+    @IBAction func logout(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
     
     @IBAction func unwindToItemList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? ViewController, newItem = sourceViewController.newItem {
